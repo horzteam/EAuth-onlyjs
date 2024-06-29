@@ -4,6 +4,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>EAuth</title>
+    <script src="/assets/js/global.js"></script>
     <link href="/assets/css/global.css" rel="stylesheet">
     <link href="https://cdn.bootcdn.net/ajax/libs/mdui/1.0.2/css/mdui.min.css" rel="stylesheet">
 </head>
@@ -51,13 +52,13 @@ mdui-theme-layout-auto">
                     mdui-menu="{target: '#mc-login-menu', position: 'top', covered: true}">更多选项<i
                         class="mdui-icon material-icons mdui-text-color-theme-icon">arrow_drop_down</i></button>
                 <ul class="mdui-menu" id="mc-login-menu">
-                    <RouterLink to="/reg"><li class="mdui-menu-item"><a class="mdui-ripple">创建新账号</a></li></RouterLink>
-                    <RouterLink to="/forgotpasswd"><li class="mdui-menu-item"><a class="mdui-ripple">忘记密码</a></li></RouterLink>
-                </ul><button type="button" class="mdui-btn mdui-btn-raised mdui-color-theme action-btn" @click="login">登录</button>
+                    <a href="./reg.html"><li class="mdui-menu-item"><a class="mdui-ripple">创建新账号</a></li></a>
+                    <a href="./forgotpasswd.html"><li class="mdui-menu-item"><a class="mdui-ripple">忘记密码</a></li></a>
+                </ul><button type="button" class="mdui-btn mdui-btn-raised mdui-color-theme action-btn" onclick="login()">登录</button>
             </div>
         </form>
     </div>
-    <script src="/assets/"></script>
+    <script src="/assets/js/usrcontrol.js"></script>
     <script src="/assets/get.drawer.js"></script>
     <script src="https://cdn.bootcdn.net/ajax/libs/mdui/1.0.2/js/mdui.min.js"></script>
 </body>
