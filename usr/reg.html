@@ -27,8 +27,44 @@ mdui-theme-layout-auto">
   </header>
   <div id="drawer" class="mdui-drawer"></div>
     <div class="mdui-container">
-        暂不开放
+        <form class="loginform">
+            <h1>注册</h1>
+            <span class="span-grey">Epsilon Auth</span>
+            <div
+                class="mdui-textfield mdui-textfield-floating-label mdui-textfield-has-bottom">
+                <label class="mdui-textfield-label">邮箱</label><input id="email" class="mdui-textfield-input" name="name"
+                    type="text" required="">
+                <div class="mdui-textfield-error">账号不能为空</div>
+            </div>
+            <div
+                class="mdui-textfield mdui-textfield-floating-label mdui-textfield-has-bottom">
+                <label class="mdui-textfield-label">密码</label><input id="password" class="mdui-textfield-input" name="password"
+                    type="password" required="">
+                <div class="mdui-textfield-error">密码不能为空</div>
+            </div>
+            <div
+            class="mdui-textfield mdui-textfield-floating-label mdui-textfield-has-bottom">
+            <label class="mdui-textfield-label">重复密码</label><input id="password" class="mdui-textfield-input" name="password"
+                type="password" required="">
+            <div class="mdui-textfield-error">密码不能为空</div>
+        </div>
+            <!--
+            <div class="mdui-textfield mdui-textfield-floating-label mdui-textfield-has-bottom captcha-field mdui-hidden">
+                <label class="mdui-textfield-label">图形验证码</label><input class="mdui-textfield-input" name="captcha_code"
+                    type="text" autocomplete="off">
+                <div class="mdui-textfield-error">请输入图形验证码</div><img class="captcha-image" src="" title="点击刷新验证码">
+            </div>-->
+            <div class="actions mdui-clearfix"><button class="mdui-btn mdui-ripple more-option" type="button"
+                    mdui-menu="{target: '#mc-login-menu', position: 'top', covered: true}">更多选项<i
+                        class="mdui-icon material-icons mdui-text-color-theme-icon">arrow_drop_down</i></button>
+                <ul class="mdui-menu" id="mc-login-menu">
+                    <a href="./reg.html"><li class="mdui-menu-item"><a class="mdui-ripple">创建新账号</a></li></a>
+                    <a href="./forgotpasswd.html"><li class="mdui-menu-item"><a class="mdui-ripple">忘记密码</a></li></a>
+                </ul><button type="button" class="mdui-btn mdui-btn-raised mdui-color-theme action-btn" onclick="login()">登录</button>
+            </div>
+        </form>
     </div>
+    <script src="/assets/js/usrcontrol.js"></script>
     <script src="/assets/get.drawer.js"></script>
     <script src="https://cdn.bootcdn.net/ajax/libs/mdui/1.0.2/js/mdui.min.js"></script>
 </body>
