@@ -10,7 +10,7 @@
     <script>
         var info=document.getElementById("info")
         function GetQueryString(api){var reg=new RegExp("(^|&)"+api+"=([^&]*)(&|$)");var r=decodeURI(window.location.search.substr(1)).match(reg);if(r!=null)return unescape(r[2]);return null};
-        if(GetQueryString("cmd")="login"){
+        if(GetQueryString("cmd")=="login"){
             if(GetQueryString("by")=="token"){
                 localStorage.setItem("token",GetQueryString("token"))
                 info.innerHTML="Login Successfully (By Token)";
