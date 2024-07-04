@@ -47,3 +47,27 @@ function login() {
         });
     });
 }
+function getuinfo(){
+
+
+// 使用Fetch API发送GET请求
+fetch(`${api}/api/auth/userinfo`, {
+  method: 'GET',
+  headers: {
+    'Authorization': `Bearer ${token}`
+  }
+})
+.then(response => {
+  if (!response.ok) {
+    throw new Error(`HTTP error! Status: ${response.status}`);
+  }
+  return response.json(); // 解析JSON格式的响应数据
+})
+.then(data => {
+  console.log(data); // 输出响应数据到控制台
+})
+.catch(error => {
+  console.error('Fetch Error:', error); // 捕获并输出错误信息
+});
+
+}
