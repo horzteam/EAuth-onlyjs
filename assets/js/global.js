@@ -1,1 +1,1 @@
-const api="https://authapi.awa.gs:50316";
+const api="https://eauth.awa.gs";
