@@ -61,13 +61,14 @@ mdui-theme-layout-auto">
                 <ul class="mdui-menu" id="mc-login-menu">
                     <a href="./login.html"><li class="mdui-menu-item"><a class="mdui-ripple">登录</a></li></a>
                     <a href="./forgotpasswd.html"><li class="mdui-menu-item"><a class="mdui-ripple">忘记密码</a></li></a>
-                </ul><button type="button" class="mdui-btn mdui-btn-raised mdui-color-theme action-btn" onclick="reg()">登录</button>
+                </ul><button type="button" class="mdui-btn mdui-btn-raised mdui-color-theme action-btn" onclick="reg()">注册</button>
             </div>
         </form>
     </div>
     <script>
       function regok(){
-        snackbar("注册成功")
+        snackbar("注册成功");
+        location.href="./login.html";
       }
       function reg(){
         fetch(api+"/api/auth/reg", {
