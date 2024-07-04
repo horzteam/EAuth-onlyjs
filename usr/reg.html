@@ -70,7 +70,7 @@ mdui-theme-layout-auto">
         snackbar("注册成功")
       }
       function reg(){
-        fetch(api, {
+        fetch(api+"/api/auth/reg", {
   method: 'POST',
   headers: {
     'Content-Type': 'application/json',
