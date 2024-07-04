@@ -31,10 +31,16 @@ mdui-theme-layout-auto">
             <h1>注册</h1>
             <span class="span-grey">Epsilon Auth</span>
             <div
+            class="mdui-textfield mdui-textfield-floating-label mdui-textfield-has-bottom">
+            <label class="mdui-textfield-label">用户名</label><input id="username" class="mdui-textfield-input" name="username"
+                type="text" required="">
+            <div class="mdui-textfield-error">用户名不能为空</div>
+        </div>
+            <div
                 class="mdui-textfield mdui-textfield-floating-label mdui-textfield-has-bottom">
                 <label class="mdui-textfield-label">邮箱</label><input id="email" class="mdui-textfield-input" name="name"
                     type="text" required="">
-                <div class="mdui-textfield-error">账号不能为空</div>
+                <div class="mdui-textfield-error">邮箱不能为空</div>
             </div>
             <div
             class="mdui-textfield mdui-textfield-floating-label mdui-textfield-has-bottom">
@@ -49,24 +55,36 @@ mdui-theme-layout-auto">
                     type="password" required="">
                 <div class="mdui-textfield-error">密码不能为空</div>
             </div>
-            <div
-            class="mdui-textfield mdui-textfield-floating-label mdui-textfield-has-bottom">
-            <label class="mdui-textfield-label">重复密码</label><input id="password" class="mdui-textfield-input" name="password"
-                type="password" required="">
-            <div class="mdui-textfield-error">密码不能为空</div>
-        </div>
             <div class="actions mdui-clearfix"><button class="mdui-btn mdui-ripple more-option" type="button"
                     mdui-menu="{target: '#mc-login-menu', position: 'top', covered: true}">更多选项<i
                         class="mdui-icon material-icons mdui-text-color-theme-icon">arrow_drop_down</i></button>
                 <ul class="mdui-menu" id="mc-login-menu">
-                    <a href="./reg.html"><li class="mdui-menu-item"><a class="mdui-ripple">创建新账号</a></li></a>
+                    <a href="./login.html"><li class="mdui-menu-item"><a class="mdui-ripple">登录</a></li></a>
                     <a href="./forgotpasswd.html"><li class="mdui-menu-item"><a class="mdui-ripple">忘记密码</a></li></a>
                 </ul><button type="button" class="mdui-btn mdui-btn-raised mdui-color-theme action-btn" onclick="reg()">登录</button>
             </div>
         </form>
     </div>
-    <script src="/assets/js/usrcontrol.js"></script>
     <script>
+      function regok(){
+        snackbar("注册成功")
+      }
+      function reg(){
+        fetch(api, {
+  method: 'POST',
+  headers: {
+    'Content-Type': 'application/json',
+  },
+  body: JSON.stringify({
+    username: document.getElementById('username').value,
+    email: document.getElementById('email').value,
+    password: document.getElementById('password').value,
+    verificationCode: document.getElementById('vad').value
+  }),
+})
+.then(response => response.ok ? regok() : snackbar("注册失败"))
+.catch(error => console.error('[EAuth - Reg] There has been a problem with your fetch operation:', error));
+      }
         function getcode(){
             if(!grecaptcha.getResponse()){
                 mdui.snackbar({
